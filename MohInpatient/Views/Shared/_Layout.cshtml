@@ -1,0 +1,125 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> _signInManager
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Newlife</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <link rel="stylesheet" href="~/css/styles.css" type="text/css" />
+    <!-- Responsive-->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="~/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="~/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <style>
+        body {
+            background-color: lightgrey;
+         
+        }
+
+
+
+        h1 {
+            color: blue;
+        }
+
+        p {
+           
+        }
+        h5{
+            color: green;
+            font-weight: bold;
+        }
+
+        table,th,td,tr{
+            color: green;
+            text-align:center;
+            border: 1px solid green;
+            font-weight:bold;
+        }
+    
+      
+    </style>
+
+</head>
+<body>
+    <header>
+        <header>
+
+            <div id="demo-container">
+                <ul id="simple-menu">
+
+                    <li><a asp-action="Index" asp-controller="Home" class="btn btn-outline-secondary"><span>الصفحة الرئيسية</span></a></li>
+
+                    <li><a asp-controller="Account" asp-action="Register">تسجيل مستخدم جديد</a></li>
+
+                    <li>
+                        <a asp-area="" asp-controller="Account" asp-action="login">تسجيل الدخول</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Inpatients" asp-action="Index">سجل الرثود</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area=""
+                           asp-controller="Account"
+                           asp-action="AllUsers">Users</a>
+                    <li class="nav-item">
+                        <a asp-area=""
+                           asp-controller="Account"
+                           asp-action="RolesList">Rolles</a>
+                </ul>
+            </div>
+        </header>
+
+       
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <!-- Javascript files-->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/jquery-3.0.0.min.js"></script>
+    <script src="~/js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <!-- javascript -->
+    <script src="~/js/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+</body>
+</html>
+
+

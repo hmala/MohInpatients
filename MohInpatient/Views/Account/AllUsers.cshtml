@@ -1,0 +1,26 @@
+﻿
+@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Title"] = "AllUsers";
+}
+
+<h1>AllUsers</h1>
+
+    <table class="table table-bordered">
+<tr>
+    <td>@Html.DisplayNameFor(n=>n.UserName)</td>
+    <td>@Html.DisplayNameFor(n=>n.Gender)</td>
+</tr>
+@foreach(var user in Model)
+        {<tr>
+            <td>
+                @user.UserName
+            </td>
+            <td>
+                @user.Gender
+            </td>
+        </tr>
+            
+        }
+    <a asp-action="CreateUser" class="btn btn-warning">create user</a>
+</table>

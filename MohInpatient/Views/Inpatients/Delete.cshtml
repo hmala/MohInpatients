@@ -1,0 +1,428 @@
+﻿@model MohInpatient.Models.Inpatient
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Inpatient</h4>
+    <hr />
+    <div class="row ">
+        <div class="col-md-16 ">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <table class="table table-bordered-bg " dir="rtl">
+                    <tr>
+                        <td>
+                            <h4>أستمارة المريض الراقد</h4>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>معلومات المستشفى</h5>
+                        </td>
+
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="UnitNum" class="control-label"></label>
+                                <input readonly asp-for="UnitNum" class="form-control" />
+                                <span asp-validation-for="UnitNum" class="text-danger"></span>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="SpeUnit" class="control-label"></label>
+                                <input readonly asp-for="SpeUnit" class="form-control" />
+                                <span asp-validation-for="SpeUnit" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+
+                            <div class="form-group">
+                                <label asp-for="DohCode" class="control-label"></label>
+                                <input readonly asp-for="DohCode" class="form-control" />
+                                <span asp-validation-for="DohCode" class="text-danger"></span>
+                            </div>
+
+                        </td>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <label asp-for="FacName" class="control-label"></label>
+                                <input readonly asp-for="FacName" class="form-control" />
+                                <span asp-validation-for="FacName" class="text-danger"></span>
+                            </div>
+
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>الموقع</h5>
+                        </td>
+
+                        <td colspan="2">
+                            <div class="form-group">
+                                <label asp-for="GovId" class="control-label" placeholder="المحافظة"></label>
+                                <input readonly asp-for="GovId" class="form-control" />
+                                <span asp-validation-for="GovId" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <label asp-for="kADAId" class="control-label"></label>
+                                <input readonly asp-for="kADAId" class="form-control" />
+                                <span asp-validation-for="kADAId" class="text-danger"></span>
+                            </div>
+                        </td>
+
+                        <td colspan="2">
+
+                            <div class="form-group">
+                                <label asp-for="NahiaId" class="control-label"></label>
+                                <input readonly asp-for="NahiaId" class="form-control" />
+                                <span asp-validation-for="NahiaId" class="text-danger"></span>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5> الاسم الرباعي</h5>
+                        </td>
+                        <td>
+
+                            <div class="form-group">
+                                <input readonly asp-for="FPaName" class="form-control" />
+                                <span asp-validation-for="FPaName" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input readonly asp-for="SPaName" class="form-control" />
+                                <span asp-validation-for="SPaName" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input readonly asp-for="TPaName" class="form-control" />
+                                <span asp-validation-for="TPaName" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+
+                            <div class="form-group">
+                                <input readonly asp-for="FoPaName" class="form-control" />
+                                <span asp-validation-for="FoPaName" class="text-danger"></span>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <h5>اسم الام الثلاثي</h5>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input readonly asp-for="FMoName" class="form-control" />
+                                <span asp-validation-for="FMoName" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input  readonly asp-for="SMoName" class="form-control" />
+                                <span asp-validation-for="SMoName" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input readonly asp-for="TMoName" class="form-control" />
+                                <span asp-validation-for="TMoName" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <h5>المعلومات الشخصية</h5>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Gender"></label>
+                                <select readonly  asp-for="Gender" class="form-control"
+                                        asp-items="Html.GetEnumSelectList<MohInpatient.Models.grouplist.Gender>()">
+                                    <option value="">--- Select  ---</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <label asp-for="Education"></label>
+                            <select readonly asp-for="Education" class="form-control"
+                                    asp-items="Html.GetEnumSelectList<MohInpatient.Models.grouplist.Education>()">
+                                <option value="">--- Select  ---</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label asp-for="job"></label>
+                            <select readonly asp-for="job" class="form-control"
+                                    asp-items="Html.GetEnumSelectList<MohInpatient.Models.grouplist.job>()">
+                                <option value="">--- Select  ---</option>
+                            </select>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Age" class="control-label"></label>
+                                <input readonly asp-for="Age" class="form-control" />
+                                <span asp-validation-for="Age" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <label asp-for="MarriedStatus"></label>
+                            <select readonly asp-for="MarriedStatus" class="form-control"
+                                    asp-items="Html.GetEnumSelectList<MohInpatient.Models.grouplist.MarriedStatus>()">
+                                <option value="">--- Select  ---</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <h5>محل الاقامة</h5>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input  readonly asp-for="MahalAkama" class="form-control" />
+                                <span asp-validation-for="MahalAkama" class="text-danger"></span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="DohPaName" class="control-label"></label>
+                                <input readonly asp-for="DohPaName" class="form-control" />
+                                <span asp-validation-for="DohPaName" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="kADAPa" class="control-label"></label>
+                                <input readonly asp-for="kADAPa" class="form-control" />
+                                <span asp-validation-for="kADAPa" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="NahiaPa" class="control-label"></label>
+                                <input readonly asp-for="NahiaPa" class="form-control" />
+                                <span asp-validation-for="NahiaPa" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <h5>معلومات  دائرة الاحول المدنية</h5>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="SahifaNum" class="control-label"></label>
+                                <input readonly asp-for="SahifaNum" class="form-control" />
+                                <span asp-validation-for="SahifaNum" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="SajilNum" class="control-label"></label>
+                                <input readonly asp-for="SajilNum" class="form-control" />
+                                <span asp-validation-for="SajilNum" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="AhwalName" class="control-label"></label>
+                                <input readonly asp-for="AhwalName" class="form-control" />
+                                <span asp-validation-for="AhwalName" class="text-danger"></span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Mwhada" class="control-label"></label>
+                                <input readonly asp-for="Mwhada" class="form-control" />
+                                <span asp-validation-for="Mwhada" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+
+                            <label asp-for="NationNamw"></label>
+                            <select readonly asp-for="NationNamw" class="form-control"
+                                    asp-items="Html.GetEnumSelectList<MohInpatient.Models.grouplist.NationNamw>()">
+                                <option value="">--- Select  ---</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="DateIn" class="control-label"></label>
+                                <input readonly asp-for="DateIn" class="form-control" />
+                                <span asp-validation-for="DateIn" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+
+                            <label asp-for="Reffer"></label>
+                            <select readonly asp-for="Reffer" class="form-control"
+                                    asp-items="Html.GetEnumSelectList<MohInpatient.Models.grouplist.Reffer>()">
+                                <option value="">--- Select  ---</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="PatientIn" class="control-label"></label>
+                                <input readonly asp-for="PatientIn" class="form-control" />
+                                <span asp-validation-for="PatientIn" class="text-danger"></span>
+                            </div>
+
+                        </td>
+                        <td>
+                            <label asp-for="PatientSmoke"></label>
+                            <select readonly asp-for="PatientSmoke" class="form-control"
+                                    asp-items="Html.GetEnumSelectList<MohInpatient.Models.grouplist.PatientSmoke>()">
+                                <option value="">--- Select  ---</option>
+                            </select>
+                        <td>
+
+                            <label asp-for="PatientDibetes"></label>
+                            <select readonly asp-for="PatientDibetes" class="form-control"
+                                    asp-items="Html.GetEnumSelectList<MohInpatient.Models.grouplist.PatientDibetes>()">
+                                <option value="">--- Select  ---</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label asp-for="PatientHypertenssion"></label>
+                            <select readonly asp-for="PatientHypertenssion" class="form-control"
+                                    asp-items="Html.GetEnumSelectList<MohInpatient.Models.grouplist.PatientHypertenssion>()">
+                                <option value="">--- Select  ---</option>
+                            </select>
+
+                        </td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <div class="form-group">
+                                <label asp-for="PatientWeight" class="control-label"></label>
+                                <input readonly asp-for="PatientWeight" class="form-control" />
+                                <span asp-validation-for="PatientWeight" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="DateOut" class="control-label"></label>
+                                <input readonly asp-for="DateOut" class="form-control" />
+                                <span asp-validation-for="DateOut" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="DiagIcd10" class="control-label"></label>
+                                <input readonly asp-for="DiagIcd10" class="form-control" />
+                                <span asp-validation-for="DiagIcd10" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="DateSurgery" class="control-label"></label>
+                                <input asp-for="DateSurgery" class="form-control" />
+                                <span asp-validation-for="DateSurgery" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="TypeSurgeryName" class="control-label"></label>
+                                <input readonly asp-for="TypeSurgeryName" class="form-control" />
+                                <span asp-validation-for="TypeSurgeryName" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="DegreeSurgeryName" class="control-label"></label>
+                                <input readonly asp-for="DegreeSurgeryName" class="form-control" />
+                                <span asp-validation-for="DegreeSurgeryName" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <div class="form-group">
+                                <label asp-for="StatePatientOut" class="control-label"></label>
+                                <input readonly asp-for="StatePatientOut" class="form-control" />
+                                <span asp-validation-for="StatePatientOut" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="NumPatientVisit" class="control-label"></label>
+                                <input readonly asp-for="NumPatientVisit" class="form-control" />
+                                <span asp-validation-for="NumPatientVisit" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="DoctorName" class="control-label"></label>
+                                <input readonly asp-for="DoctorName" class="form-control" />
+                                <span asp-validation-for="DoctorName" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+
+                            <div class="form-group">
+                                <label asp-for="Certificate" class="control-label"></label>
+                                <input readonly asp-for="Certificate" class="form-control" />
+                                <span asp-validation-for="Certificate" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+
+                            <div class="form-group">
+                                <label asp-for="DoctorSpe" class="control-label"></label>
+                                <input readonly asp-for="DoctorSpe" class="form-control" />
+                                <span asp-validation-for="DoctorSpe" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+                   
+
+                </table>
+
+            </form>
+        </div>
+    </div>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="InpatientId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        <a class="btn btn-info" asp-action="Index">سجل الرقود</a>
+    </form>
+</div>

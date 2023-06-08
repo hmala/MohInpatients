@@ -1,0 +1,43 @@
+﻿@model IList<AddRemoveUsersRoleViewModel>
+@{
+    ViewData["Title"] = "AddRemoveUsersRole";
+}
+
+<h1>AddRemoveUsersRole</h1>
+<form method="post" asp-action="AddRemoveUsersRole" asp-controller="Account">
+    <div class="card">
+        <div class="card_header">
+            <h3>users in this rol</h3>
+        </div>
+        <div class="card-body">
+            <table>
+                <tr>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        @Html.HiddenFor(x=>Model[i].UserId)
+                        @Html.HiddenFor(x=>Model[i].UserName)
+                    <tr>
+                        <input asp-for="@Model[i].IsSelected">
+
+                    </tr>
+                    <tr>
+                        <label asp-for="@Model[i].UserName">@Model[i].UserName</label>
+                    </tr>
+                    <br />
+                    }
+                </tr>
+
+            </table>
+
+        </div>
+        <div class="card-footer">
+
+            <input type="submit" a class="btn btn-success" value="save" />
+            <a asp-action="EditRole"
+               asp-controller="Account"
+               class="btn btn-secondary">cancel</a>
+        </div>
+    </div>
+
+</form>
+

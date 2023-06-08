@@ -1,0 +1,43 @@
+﻿@model IEnumerable<IdentityRole>
+@{
+    ViewData["Title"] = "RolesList";
+}
+
+<h1>RolesList</h1>
+<a asp-action="CreateRole" class="btn btn-success" >Create Role</a>
+@foreach(var item in Model)
+{
+    <div class="card">
+    <div class="card-header">
+        <b>ROLE ID:</b> @item.Id
+    </div>
+    <div class="card-body">
+            <b>ROLE NAME:</b> @item.Name
+    </div>
+    <div class="card-footer text-center">
+            <form asp-action="DeleteRole" asp-route-id="@item.Id" method="post">
+            <a asp-action="EditRole" class="btn btn-primary" asp-route-id="@item.Id">
+                Edit Role
+            </a>
+           
+                <span id="confirmDeleteSpan_@item.Id" style="display:none">
+                    <span>Are you sure you want to delete?</span>
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                    <a href="RolesList" class="btn btn-primary"
+                       onclick="confirmDelete('@item.Id', false)">No</a>
+                </span>
+
+                <span id="deleteSpan_@item.Id">
+                    <a href="RolesList" class="btn btn-danger"
+                       onclick="confirmDelete('@item.Id', true)">Delete</a>
+                </span>
+            </form>
+    </div>
+
+    </div>
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
